@@ -1,9 +1,7 @@
 FROM alpine:latest
 FROM php:fpm-alpine
 
-WORKDIR /usr/bin/composer
 RUN apk add icu-dev
-RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN docker-php-ext-configure intl && docker-php-ext-install intl
 
 RUN apk --update --no-cache add curl ca-certificates nginx
